@@ -2,6 +2,19 @@ import pymysql
 import time
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
+import logging
+
+
+
+LOGGER = logging.getlogger((__name__))
+LOGGER.setlevel(logging.INFO)
+
+SH = logging.StreamHandler(stream=sys.stdout)
+SH.setLevel(logging.INFO)
+
+LOGGER.addhandler(SH)
+
+FORMATTER = logging.Formatter(fmt="asctimes, levelname, message")
 
 app = FastAPI()
 
